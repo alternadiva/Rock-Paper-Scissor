@@ -18,10 +18,30 @@ scissor.innerHTML = `<img src="${scissorIcon}" alt="scissor hand">`;
 
 board.append(rock, paper, scissor);
 
-const output = document.getElementById("output-message");
+let output = document.getElementById("output-message");
+
+const computersChoice = () => {
+  let rockPaperScissorArray = ["rock", "paper", "scissor"];
+  let randomGesture =
+    rockPaperScissorArray[
+      Math.floor(Math.random() * rockPaperScissorArray.length)
+    ];
+  return randomGesture;
+};
+
+board.childNodes.forEach((gesture) =>
+  gesture.addEventListener("click", usersChoice)
+);
+
+function usersChoice() {
+  output.innerText = "";
+  rockPaperScissor(this.id, computersChoice());
+  return this.id;
+}
 
 function rockPaperScissor(player1, player2) {
   const outputMessage = `Player's choice is ${player1}, computer's choice is ${player2}. The winner is `;
+
   if (player1 !== player2) {
     if (player1 === "rock" && player2 === "scissor") {
       output.innerText = `${outputMessage + player1}`;
@@ -40,22 +60,4 @@ function rockPaperScissor(player1, player2) {
     output.innerText = `Player's choice is ${player1}, computer's choice is ${player2}. It's a draw!`;
     return "Draw";
   }
-}
-
-const computersChoice = () => {
-  let rockPaperScissorArray = ["rock", "paper", "scissor"];
-  let randomGesture =
-    rockPaperScissorArray[
-      Math.floor(Math.random() * rockPaperScissorArray.length)
-    ];
-  return randomGesture;
-};
-
-board.childNodes.forEach((gesture) =>
-  gesture.addEventListener("click", usersChoice)
-);
-
-function usersChoice() {
-  rockPaperScissor(this.id, computersChoice());
-  return this.id;
 }

@@ -1,18 +1,21 @@
 test("Rock vs Paper -> Paper should win", () => {
   const actual = rockPaperScissor("rock", "paper");
-  const expected = "The winner is paper";
+  const expected =
+    "Player's choice is rock, computer's choice is paper. The winner is paper";
   equal(actual, expected);
 });
 
 test("Rock vs Scissor -> Rock should win", () => {
   const actual = rockPaperScissor("rock", "scissor");
-  const expected = "The winner is rock";
+  const expected =
+    "Player's choice is rock, computer's choice is scissor. The winner is rock";
   equal(actual, expected);
 });
 
 test("Paper vs Scissor -> Scissor should win", () => {
   const actual = rockPaperScissor("paper", "scissor");
-  const expected = "The winner is scissor";
+  const expected =
+    "Player's choice is paper, computer's choice is scissor. The winner is scissor";
   equal(actual, expected);
 });
 
