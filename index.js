@@ -18,26 +18,36 @@ scissor.innerHTML = `<img src="${scissorIcon}" alt="scissor hand">`;
 
 board.append(rock, paper, scissor);
 
-function rPS(player1, player2) {
+function rockPaperScissor(player1, player2) {
+  console.log(player1);
+  console.log(player2);
   const outputMessage = "The winner is ";
   if (player1 !== player2) {
     if (player1 === "rock" && player2 === "scissor") {
+      console.log(outputMessage + player1);
       return outputMessage + player1;
     } else if (player1 === "scissor" && player2 === "paper") {
+      console.log(outputMessage + player1);
       return outputMessage + player1;
     } else if (player1 === "paper" && player2 === "rock") {
+      console.log(outputMessage + player1);
       return outputMessage + player1;
     } else {
+      console.log(outputMessage + player2);
       return outputMessage + player2;
     }
   } else {
+    console.log("Draw");
     return "Draw";
   }
 }
 
 const computersChoice = () => {
-  let rPSArray = ["rock", "paper", "scissor"];
-  let randomGesture = rPSArray[Math.floor(Math.random() * rPSArray.length)];
+  let rockPaperScissorArray = ["rock", "paper", "scissor"];
+  let randomGesture =
+    rockPaperScissorArray[
+      Math.floor(Math.random() * rockPaperScissorArray.length)
+    ];
   return randomGesture;
 };
 
@@ -46,5 +56,6 @@ board.childNodes.forEach((gesture) =>
 );
 
 function usersChoice() {
+  rockPaperScissor(this.id, computersChoice());
   return this.id;
 }
