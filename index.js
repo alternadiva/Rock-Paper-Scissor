@@ -18,26 +18,26 @@ scissor.innerHTML = `<img src="${scissorIcon}" alt="scissor hand">`;
 
 board.append(rock, paper, scissor);
 
+const output = document.getElementById("output-message");
+
 function rockPaperScissor(player1, player2) {
-  console.log(player1);
-  console.log(player2);
-  const outputMessage = "The winner is ";
+  const outputMessage = `Player's choice is ${player1}, computer's choice is ${player2}. The winner is `;
   if (player1 !== player2) {
     if (player1 === "rock" && player2 === "scissor") {
-      console.log(outputMessage + player1);
+      output.innerText = `${outputMessage + player1}`;
       return outputMessage + player1;
     } else if (player1 === "scissor" && player2 === "paper") {
-      console.log(outputMessage + player1);
+      output.innerText = `${outputMessage + player1}`;
       return outputMessage + player1;
     } else if (player1 === "paper" && player2 === "rock") {
-      console.log(outputMessage + player1);
+      output.innerText = `${outputMessage + player1}`;
       return outputMessage + player1;
     } else {
-      console.log(outputMessage + player2);
+      output.innerText = `${outputMessage + player2}`;
       return outputMessage + player2;
     }
   } else {
-    console.log("Draw");
+    output.innerText = `Player's choice is ${player1}, computer's choice is ${player2}. It's a draw!`;
     return "Draw";
   }
 }
