@@ -1,14 +1,20 @@
 const board = document.getElementById("rock-paper-scissor");
 
+const rockIcon = "./assets/rock.png";
+const paperIcon = "./assets/paper.png";
+const scissorIcon = "./assets/scissor.png";
+
 const rock = document.createElement("div");
 rock.id = "rock";
-rock.innerHTML = `<img src="./assets/rock.png" alt="rock hand">`;
+rock.innerHTML = `<img src="${rockIcon}" alt="rock hand">`;
+
 const paper = document.createElement("div");
 paper.id = "paper";
-paper.innerHTML = `<img src="./assets/paper.png" alt="paper hand">`;
+paper.innerHTML = `<img src="${paperIcon}" alt="paper hand">`;
+
 const scissor = document.createElement("div");
 scissor.id = "scissor";
-scissor.innerHTML = `<img src="./assets/scissor.png" alt="scissor hand">`;
+scissor.innerHTML = `<img src="${scissorIcon}" alt="scissor hand">`;
 
 board.append(rock, paper, scissor);
 
@@ -28,3 +34,9 @@ function rPS(player1, player2) {
     return "Draw";
   }
 }
+
+const randomRPS = () => {
+  let rPSArray = ["rock", "paper", "scissor"];
+  let randomGesture = rPSArray[Math.floor(Math.random() * rPSArray.length)];
+  return randomGesture;
+};
