@@ -35,8 +35,16 @@ function rPS(player1, player2) {
   }
 }
 
-const randomRPS = () => {
+const computersChoice = () => {
   let rPSArray = ["rock", "paper", "scissor"];
   let randomGesture = rPSArray[Math.floor(Math.random() * rPSArray.length)];
   return randomGesture;
 };
+
+board.childNodes.forEach((gesture) =>
+  gesture.addEventListener("click", usersChoice)
+);
+
+function usersChoice() {
+  return this.id;
+}
