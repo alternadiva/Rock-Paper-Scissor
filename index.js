@@ -1,3 +1,17 @@
+const board = document.getElementById("rock-paper-scissor");
+
+const rock = document.createElement("div");
+rock.id = "rock";
+rock.innerHTML = `<img src="./assets/rock.png" alt="rock hand">`;
+const paper = document.createElement("div");
+paper.id = "paper";
+paper.innerHTML = `<img src="./assets/paper.png" alt="paper hand">`;
+const scissor = document.createElement("div");
+scissor.id = "scissor";
+scissor.innerHTML = `<img src="./assets/scissor.png" alt="scissor hand">`;
+
+board.append(rock, paper, scissor);
+
 function rPS(player1, player2) {
   const outputMessage = "The winner is ";
   if (player1 !== player2) {
