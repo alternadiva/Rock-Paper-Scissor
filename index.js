@@ -6,19 +6,20 @@ const scissorIcon = "./assets/scissor.png";
 
 const rock = document.createElement("div");
 rock.id = "rock";
-rock.innerHTML = `<img src="${rockIcon}" alt="rock hand">`;
+rock.innerHTML = `<img src="${rockIcon}" alt="rock hand" class="gesture">`;
 
 const paper = document.createElement("div");
 paper.id = "paper";
-paper.innerHTML = `<img src="${paperIcon}" alt="paper hand">`;
+paper.innerHTML = `<img src="${paperIcon}" alt="paper hand" class="gesture">`;
 
 const scissor = document.createElement("div");
 scissor.id = "scissor";
-scissor.innerHTML = `<img src="${scissorIcon}" alt="scissor hand">`;
+scissor.innerHTML = `<img src="${scissorIcon}" alt="scissor hand" class="gesture">`;
 
 board.append(rock, paper, scissor);
 
 let output = document.getElementById("output-message");
+output.setAttribute("hidden", "");
 
 const computersChoice = () => {
   let rockPaperScissorArray = ["rock", "paper", "scissor"];
@@ -34,7 +35,7 @@ board.childNodes.forEach((gesture) =>
 );
 
 function usersChoice() {
-  output.innerText = "";
+  output.removeAttribute("hidden", "");
   rockPaperScissor(this.id, computersChoice());
   return this.id;
 }

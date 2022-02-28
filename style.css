@@ -1,0 +1,26 @@
+#rock-paper-scissor {
+  width: 95vw;
+  height: 75vh;
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: center;
+}
+
+#rock-paper-scissor > div {
+  cursor: pointer;
+  width: 320px;
+  height: 320px;
+  background-color: papayawhip;
+  border-radius: 50%;
+  position: relative;
+}
+
+.gesture {
+  height: 50%;
+  position: absolute;
+  top: 25%;
+  left: 15%;
+}
