@@ -1,4 +1,4 @@
-## Rock-Paper-Scissor ✊ ✋ ✌️
+## Rock-Paper-Scissor 🤝
 
 #### Unit testing practice with the Rock-Paper-Scissor game in progress...
 
